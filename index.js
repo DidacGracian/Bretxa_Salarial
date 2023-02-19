@@ -117,6 +117,7 @@ function Start() {
     textoScore = document.querySelector(".score");
     dino = document.querySelector(".dino");
     document.addEventListener("keydown", HandleKeyDown);
+    document.addEventListener("touchstart", HandleKeyDown);
 }
 
 function Update() {
@@ -146,10 +147,6 @@ function TimeWin() {
 function HandleKeyDown(ev) {
     Saltar();
 }
-
-document.addEventListener("touchstart", function (event) {
-    Saltar();
-});
 
 function Saltar() {
     if (dinoPosY === sueloY) {
