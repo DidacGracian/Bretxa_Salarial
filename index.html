@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src='index.js'></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaurio Chrome V2</title>
+</head>
+
+<body>
+    <!-- <div class="contenedor showMenu" id="menu">
+        <p>Quin genere vols jugar?</p>
+        <button onclick="startGame()">Dona</button>
+        <button onclick="startGame()">Home</button>
+        <button onclick="startGame()">No Binari</button>
+    </div> -->
+
+    <div class="contenedor ">
+
+        <div class=" showMenu" id="menu" style="position: absolute; top:30%; left: 40%;">
+            <p>Quin genere vols jugar?</p>
+            <div style="display: flex; justify-content: space-around; padding: 7%;">
+                <button onclick="selectSex(true)">Dona</button>
+                <button onclick="selectSex(false)">Home</button>
+            </div>
+
+        </div>
+        <div class="suelo showGame"></div>
+
+        <div class="dino dino-corriendo"></div>
+
+        <div class="score showGame">0</div>
+
+    </div>
+
+    <div class="game-over">
+        <p>GAME OVER</p>
+        <!-- <button onclick="startGame()">Restart</button> -->
+        <button onclick="startMenu()">Restart</button>
+    </div>
+
+    <div class="winHome">
+        <p>FINAL DE MES!</p>
+        <p>1000€!</p>
+        <!-- <button onclick="startGame()">Restart</button> -->
+        <button onclick="startMenu()">Restart</button>
+    </div>
+
+    <div class="winDona">
+        <p>FINAL DE MES!</p>
+        <p>800€!</p>
+        <!-- <button onclick="startGame()">Restart</button> -->
+        <button onclick="startMenu()">Restart</button>
+    </div>
+
+
+</body>
+
+</html>

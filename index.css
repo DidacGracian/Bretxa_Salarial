@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background: #5e0e7e;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor {
+    width: 920px;
+    height: 280px;
+    margin: 0 auto;
+    
+    position: relative;
+
+    background:  white;
+    transition: background-color 1s linear;
+    overflow: hidden;
+    display: block;
+}
+
+.mediodia {
+    background-color: hsl(248, 39%, 47%);
+}
+
+.tarde {
+    background-color: hsl(248, 39%, 47%);
+}
+
+.noche {
+    background-color: hsl(248, 39%, 47%);
+}
+
+.dino {
+    width: 53px;
+    height: 46px;
+
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(img/Personatges.png) repeat-x 0px 0px;
+    background-size: 238px 147px;
+    background-position-x: 0px;
+    background-position-y: -57px;
+    display: none;
+}
+
+.dona {
+    width: 175px;
+    height: 84px;
+
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(img/donaCorrentBo.png) repeat-x 0px 0px;
+    background-size: 393px 87px;
+    background-position-x: 0px;
+    display: none;
+}
+
+.dino-corriendo {
+    animation: animarDino 0.25s steps(2) infinite;
+}
+.dino-estrellado {
+    background-position-x: -126px;
+}
+
+.suelo {
+    width: 200%;
+    height: 42px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background: url(img/suelo.png) repeat-x 0px 0px;
+    background-size: 50% 42px;
+
+}
+
+.murPetit{
+    width: 40px;
+    height: 60px;
+
+    position: absolute;
+    bottom: 16px;
+    left: 600px;
+    z-index: 1;
+
+    background: url(img/murPetit.png) no-repeat;
+}
+.murGran{
+    width: 33px;
+    height: 85px;
+
+    background: url(img/MurGran.png) no-repeat;
+}
+
+.nube{
+    width: 92px;
+    height: 26px;
+
+    position: absolute;
+    z-index: 0;
+
+    background: url(img/Nuvol.png) no-repeat;
+    background-size: 92px 26px;
+}
+
+.score{
+    width: 100px;
+    height: 30px;
+
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 10;
+
+    color:hsl(248, 39%, 47%); 
+    font-family: Verdana;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.game-over{
+    display: none;
+
+    position: absolute;
+    width: 100%;
+
+
+    text-align: center;
+    color: #7e928b;
+    font-size: 30px;
+    font-family: Verdana;
+    font-weight: 700;
+}
+
+.winHome{
+    display: none;
+
+    position: absolute;
+    width: 100%;
+
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    font-family: Verdana;
+    font-weight: 700;
+}
+
+.winDona{
+    display: none;
+
+    position: absolute;
+    width: 100%;
+
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    font-family: Verdana;
+    font-weight: 700;
+}
+
+.showMenu{
+    display: block;
+}
+
+.showGame{
+    display: none;
+}
+
+@keyframes animarDino{
+    from{
+        background-position-x: -129px;
+    }
+    to{
+        background-position-x: -175px;
+    }
+}
+
+@keyframes animarDona{
+    from{
+        background-position-x: -124px;
+    }
+    to{
+        background-position-x: -231px;
+    }
+}
+
+@keyframes animarHome{
+    from{
+        background-position-x: -124px;
+    }
+    to{
+        background-position-x: -231px;
+    }
+}

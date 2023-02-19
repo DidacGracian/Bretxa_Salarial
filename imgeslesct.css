@@ -1,0 +1,40 @@
+.donaParada {
+    width: 53px;
+    height: 46px;
+
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(img/Personatges.png) repeat-x 0px 0px;
+    background-size: 238px 147px;
+    background-position-x: -129px;
+    background-position-y: -57px;
+    display: none;
+}
+
+.donaOberta {
+    width: 53px;
+    height: 46px;
+
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(img/Personatges.png) repeat-x 0px 0px;
+    background-size: 238px 147px;
+    background-position-x: -175px;
+    background-position-y: -57px;
+    display: none;
+}
+
+@keyframes animarDino{
+    from{
+        background-position-x: -124px;
+    }
+    to{
+        background-position-x: -231px;
+    }
+}
