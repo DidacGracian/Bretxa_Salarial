@@ -69,7 +69,7 @@ function startGame() {
     if (!this.genere) {
         whoRun.style.animationName = "animarHome";
         element.style.backgroundPositionY = "-12px";
-    }else{
+    } else {
         whoRun.style.animationName = "animarDona";
         element.style.backgroundPositionY = "-57px";
     }
@@ -126,7 +126,7 @@ function Update() {
         MoverDinosaurio();
         MoverSuelo();
         if (genere) {
-            DecidirCrearObstaculos();            
+            DecidirCrearObstaculos();
             MoverObstaculos();
             DetectarColision();
         }
@@ -137,15 +137,19 @@ function Update() {
     velY -= gravedad * deltaTime;
 }
 
-function TimeWin(){
+function TimeWin() {
     var fechaActual = new Date();
     if ((fechaActual - fechaInicio) >= 9000) { // Compara las fechas (en milisegundos)
-       win();
-      }
+        win();
+    }
 }
 function HandleKeyDown(ev) {
-        Saltar();    
+    Saltar();
 }
+
+document.addEventListener("touchstart", function (event) {
+    Saltar();
+});
 
 function Saltar() {
     if (dinoPosY === sueloY) {
@@ -263,12 +267,12 @@ function GanarPuntos() {
     suelo.style.animationDuration = (3 / gameVel) + "s";
 }
 
-function win(){
-    if(genere){
+function win() {
+    if (genere) {
         dino.classList.remove("dino-corriendo");
         var winDona = document.querySelector(".winDona");
         winDona.style.display = "block";
-    }else{
+    } else {
         dino.classList.remove("dino-corriendo");
         var winDona = document.querySelector(".winHome");
         winDona.style.display = "block";
