@@ -65,7 +65,6 @@ function startGame() {
     element.style.display = 'block';
     element = document.querySelector('.dino');
     var whoRun = document.querySelector(".dino-corriendo");
-    whoRun.style.animationName = "newAnimation";
     if (!this.genere) {
         whoRun.style.animationName = "animarHome";
         element.style.backgroundPositionY = "-12px";
