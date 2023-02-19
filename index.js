@@ -139,14 +139,12 @@ function Update() {
 
 function TimeWin(){
     var fechaActual = new Date();
-    if ((fechaActual - fechaInicio) >= 20000) { // Compara las fechas (en milisegundos)
+    if ((fechaActual - fechaInicio) >= 9000) { // Compara las fechas (en milisegundos)
        win();
       }
 }
 function HandleKeyDown(ev) {
-    if (ev.keyCode == 32) {
-        Saltar();
-    }
+        Saltar();    
 }
 
 function Saltar() {
