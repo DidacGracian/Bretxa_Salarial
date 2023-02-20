@@ -15,37 +15,33 @@
     <div class="contenedor ">
 
         <div class=" showMenu" id="menu" style="position: absolute; top:30%; left: 40%;">
-            <p>Quin genere vols jugar?</p>
+            <p>Amb quin gènere vols jugar?</p>
             <div style="display: flex; justify-content: space-around; padding: 7%;">
-                <button onclick="selectSex(true)">Dona</button>
-                <button onclick="selectSex(false)">Home</button>
+                <button onclick="selectSex(true)">DONA</button>
+                <button onclick="selectSex(false)">HOME</button>
             </div>
-
         </div>
         <div class="suelo showGame"></div>
 
         <div class="dino dino-corriendo"></div>
 
         <div class="score showGame">0</div>
+        <div class="winDona">
+            <p id="texto-original"></p>
+            <p id="texto-original2"></p>
 
+            <button id="showRestart" onclick="startMenu()">Restart</button>
+        </div>
     </div>
+
+    <!-- <div class="winHome max-width">
+        <p id="texto-original"></p>
+        <p id="texto-original2"></p>
+        <button id="showRestart" onclick="startMenu()">Restart</button>
+    </div> -->
 
     <div class="game-over">
         <p>GAME OVER</p>
-        <!-- <button onclick="startGame()">Restart</button> -->
-        <button onclick="startMenu()">Restart</button>
-    </div>
-
-    <div class="winHome">
-        <p>FINAL DE MES!</p>
-        <p>1000€!</p>
-        <!-- <button onclick="startGame()">Restart</button> -->
-        <button onclick="startMenu()">Restart</button>
-    </div>
-
-    <div class="winDona">
-        <p>FINAL DE MES!</p>
-        <p>800€!</p>
         <!-- <button onclick="startGame()">Restart</button> -->
         <button onclick="startMenu()">Restart</button>
     </div>

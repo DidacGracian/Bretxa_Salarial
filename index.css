@@ -23,16 +23,18 @@ body{
     display: block;
 }
 
-.mediodia {
-    background-color: hsl(248, 39%, 47%);
-}
+.max-width{
+    width: 70%;
+    height: 40%;
+    margin: 0 auto;
+    
+    position: relative;
 
-.tarde {
-    background-color: hsl(248, 39%, 47%);
-}
-
-.noche {
-    background-color: hsl(248, 39%, 47%);
+    background:  rgb(230, 230, 230);
+    transition: background-color 1s linear;
+    overflow: hidden;
+    display: block;
+    font-size: medium;
 }
 
 .dino {
@@ -169,6 +171,7 @@ body{
     font-size: 30px;
     font-family: Verdana;
     font-weight: 700;
+    padding-top: 6%;
 }
 
 .showMenu{
@@ -178,6 +181,19 @@ body{
 .showGame{
     display: none;
 }
+
+.end{
+    display:none;
+}
+
+.texto-original{
+    font-size: 30px;
+}
+
+.texto-original2{
+    font-size: 30px;
+}
+
 
 @keyframes animarDino{
     from{

@@ -1,3 +1,4 @@
+const gameTime = 9000;
 var sueloY = 22;
 var velY = 0;
 var impulso = 900;
@@ -33,7 +34,7 @@ var dino;
 var textoScore;
 var suelo;
 var gameOver;
-
+var refresh = true;
 var genere = true; // true dona, false home
 
 var showObstacle = false;
@@ -52,7 +53,28 @@ if (localStorage.getItem('restartGame')) {
     startGame();
 }
 
+// Función para refrescar la página
+function refrescarPagina() {
+    location.reload();
+}
+
+// Función para detener la actualización
+function detenerActualizacion() {
+    clearInterval(intervalId);
+}
+
+// Configuración del intervalo de actualización
+var intervalo = 5000; // 5000 ms = 5 segundos
+var intervalId = setInterval(function () {
+    if (refresh) {
+        refrescarPagina();
+    } else {
+        detenerActualizacion();
+    }
+}, intervalo);
+
 function selectSex(genere) {
+    this.refresh = false;
     this.genere = genere;
     startGame()
 }
@@ -92,8 +114,6 @@ function Loop() {
     Update();
     requestAnimationFrame(Loop);
 }
-
-
 
 function inicializeObjects() {
     tiempoHastaObstaculo = 2;
@@ -139,7 +159,7 @@ function Update() {
 
 function TimeWin() {
     var fechaActual = new Date();
-    if ((fechaActual - fechaInicio) >= 9000) { // Compara las fechas (en milisegundos)
+    if ((fechaActual - fechaInicio) >= gameTime) { // Compara las fechas (en milisegundos)
         win();
     }
 }
@@ -213,6 +233,14 @@ function CrearObstaculo() {
     tiempoHastaObstaculo = tiempoObstaculoMin + Math.random() * (tiempoObstaculoMax - tiempoObstaculoMin) / gameVel;
 }
 
+function eliminarObstaculos() {
+    for (var i = 0; i < obstaculos.length; i++) {
+        var obstaculo = obstaculos[i];
+        obstaculo.remove();
+    }
+    obstaculos.splice(0, obstaculos.length);
+}
+
 function CrearNube() {
     var nube = document.createElement("div");
     contenedor.appendChild(nube);
@@ -223,6 +251,14 @@ function CrearNube() {
 
     nubes.push(nube);
     tiempoHastaNube = tiempoNubeMin + Math.random() * (tiempoNubeMax - tiempoNubeMin) / gameVel;
+}
+
+function eliminarNubes() {
+    for (var i = 0; i < nubes.length; i++) {
+        var nube = nubes[i];
+        nube.remove();
+    }
+    nubes.splice(0, nubes.length);
 }
 
 function MoverObstaculos() {
@@ -264,16 +300,30 @@ function GanarPuntos() {
 }
 
 function win() {
+    parado = true;
+    const textoOriginal = document.getElementById('texto-original');
+    const textoOriginal2 = document.getElementById('texto-original2');
+    eliminarNubes();
+    dino.classList.remove("dino-corriendo");
+    dino.classList.remove("container");
     if (genere) {
-        dino.classList.remove("dino-corriendo");
+        eliminarObstaculos();
         var winDona = document.querySelector(".winDona");
         winDona.style.display = "block";
+        textoOriginal.textContent = "Sou mig d’una dona: 1.604,83€/bruts.";
+        textoOriginal2.textContent = " Un 18,73% menys que un home.d";
     } else {
         dino.classList.remove("dino-corriendo");
-        var winDona = document.querySelector(".winHome");
-        winDona.style.display = "block";
+        var winHome = document.querySelector(".winDona");
+        winHome.style.display = "block";
+        textoOriginal.textContent = "Sou mig d’un home: 1.974,46€/bruts. ";
+        textoOriginal2.textContent = " Un 18,73% més que una dona.";
     }
-    parado = true;
+
+    setTimeout(() => {
+        textoOriginal.textContent = "22 de febrer: Dia de la igualtat salarial entre homes i dones.";
+        textoOriginal2.textContent = "⚖️💵 TRENQUEM AMB LA BRETXA SALARIAL, EQUILIBREM LA BALANÇA!";
+    }, 3000);
 }
 
 function GameOver() {
