@@ -53,6 +53,10 @@ if (localStorage.getItem('restartGame')) {
     startGame();
 }
 
+document.addEventListener("touchend", function(event) {
+    Saltar();
+  });
+
 // Función para refrescar la página
 function refrescarPagina() {
     location.reload();
