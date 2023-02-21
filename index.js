@@ -280,7 +280,9 @@ function MoverObstaculos() {
             obstaculos[i].parentNode.removeChild(obstaculos[i]);
             obstaculos.splice(i, 1);
             GanarPuntos();
-        } else {
+
+            
+        } else {  
             obstaculos[i].posX -= CalcularDesplazamiento();
             obstaculos[i].style.left = obstaculos[i].posX + "px";
         }
