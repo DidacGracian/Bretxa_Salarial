@@ -86,6 +86,7 @@ function selectSex(genere) {
 
 function startGame() {
     time = new Date();
+    setInterval(console.log("waiting..."), 10000);
     let element = document.querySelector('.showMenu');
     element.style.display = 'none';
     element = document.querySelector('.showGame');
@@ -318,9 +319,9 @@ function win() {
     eliminarNubes();
     dino.classList.remove("dino-corriendo");
     dino.classList.remove("container");
+    var winDona = document.querySelector(".winDona");
     if (genere) {
-        eliminarObstaculos();
-        var winDona = document.querySelector(".winDona");
+        eliminarObstaculos();        
         winDona.style.display = "block";
         textoOriginal.textContent = "Sou mig d’una dona: 1.604,83€/bruts.";
         textoOriginal2.textContent = " Un 18,73% menys que un home.";
