@@ -306,7 +306,7 @@ function GanarPuntos() {
     } else if (score == 10) {
         gameVel = 2;
     } else if (score == 20) {
-        gameVel = 3;
+        gameVel = 2.5;
     }
     suelo.style.animationDuration = (3 / gameVel) + "s";
 }
