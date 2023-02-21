@@ -323,7 +323,7 @@ function win() {
         var winDona = document.querySelector(".winDona");
         winDona.style.display = "block";
         textoOriginal.textContent = "Sou mig d’una dona: 1.604,83€/bruts.";
-        textoOriginal2.textContent = " Un 18,73% menys que un home.d";
+        textoOriginal2.textContent = " Un 18,73% menys que un home.";
     } else {
         dino.classList.remove("dino-corriendo");
         var winHome = document.querySelector(".winDona");
