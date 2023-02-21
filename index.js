@@ -303,12 +303,22 @@ function GanarPuntos() {
     score++;
     textoScore.innerText = score;
     if (score == 5) {
+        gameVel = 1.3;
+    } else if (score == 7) {
         gameVel = 1.5;
-    } else if (score == 10) {
-        gameVel = 2;
+    }  else if (score == 11) {
+        gameVel = 1.7;
+    } else if (score == 17) {
+        gameVel = 2.0;
     } else if (score == 20) {
+        gameVel = 2.3;
+    } else if (score == 23) {
         gameVel = 2.5;
+    } else if (score == 25) {
+        gameVel = 3.0;
     }
+
+
     suelo.style.animationDuration = (3 / gameVel) + "s";
 }
 
