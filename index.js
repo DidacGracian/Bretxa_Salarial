@@ -1,4 +1,5 @@
-const gameTime = 9000;
+const gameTimeDona = 25000;
+const gameTimeHome = 9000;
 var sueloY = 22;
 var velY = 0;
 var impulso = 900;
@@ -59,7 +60,7 @@ document.addEventListener("touchend", function(event) {
 
 // Función para refrescar la página
 function refrescarPagina() {
-    location.reload();
+    // location.reload();
 }
 
 // Función para detener la actualización
@@ -163,9 +164,16 @@ function Update() {
 
 function TimeWin() {
     var fechaActual = new Date();
-    if ((fechaActual - fechaInicio) >= gameTime) { // Compara las fechas (en milisegundos)
-        win();
+    if(genere){
+        if ((fechaActual - fechaInicio) >= gameTimeDona) { // Compara las fechas (en milisegundos)
+            win();
+        }
+    }else{
+        if ((fechaActual - fechaInicio) >= gameTimeHome) { // Compara las fechas (en milisegundos)
+            win();
+        }
     }
+    
 }
 function HandleKeyDown(ev) {
     Saltar();
@@ -326,8 +334,8 @@ function win() {
 
     setTimeout(() => {
         textoOriginal.textContent = "22 de febrer: Dia de la igualtat salarial entre homes i dones.";
-        textoOriginal2.textContent = "⚖️💵 TRENQUEM AMB LA BRETXA SALARIAL, EQUILIBREM LA BALANÇA!";
-    }, 3000);
+        textoOriginal2.textContent = "💵 TRENQUEM AMB LA BRETXA SALARIAL, EQUILIBREM LA BALANÇA!⚖️";
+    }, 5000);
 }
 
 function GameOver() {

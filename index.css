@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-body{
+body {
     height: 100vh;
     background: #5e0e7e;
     display: flex;
@@ -14,23 +14,23 @@ body{
     width: 70%;
     height: 40%;
     margin: 0 auto;
-    
+
     position: relative;
 
-    background:  white;
+    background: white;
     transition: background-color 1s linear;
     overflow: hidden;
     display: block;
 }
 
-.max-width{
+.max-width {
     width: 70%;
     height: 40%;
     margin: 0 auto;
-    
+
     position: relative;
 
-    background:  rgb(230, 230, 230);
+    background: rgb(230, 230, 230);
     transition: background-color 1s linear;
     overflow: hidden;
     display: block;
@@ -71,6 +71,7 @@ body{
 .dino-corriendo {
     animation: animarDino 0.25s steps(2) infinite;
 }
+
 .dino-estrellado {
     background-position-x: -126px;
 }
@@ -88,7 +89,7 @@ body{
 
 }
 
-.murPetit{
+.murPetit {
     width: 40px;
     height: 60px;
 
@@ -99,14 +100,15 @@ body{
 
     background: url(img/murPetit.png) no-repeat;
 }
-.murGran{
+
+.murGran {
     width: 33px;
     height: 85px;
 
     background: url(img/MurGran.png) no-repeat;
 }
 
-.nube{
+.nube {
     width: 92px;
     height: 26px;
 
@@ -117,7 +119,7 @@ body{
     background-size: 92px 26px;
 }
 
-.score{
+.score {
     width: 100px;
     height: 30px;
 
@@ -126,14 +128,14 @@ body{
     right: 15px;
     z-index: 10;
 
-    color:hsl(248, 39%, 47%); 
+    color: hsl(248, 39%, 47%);
     font-family: Verdana;
     font-size: 30px;
     font-weight: bold;
     text-align: right;
 }
 
-.game-over{
+.game-over {
     display: none;
 
     position: absolute;
@@ -147,7 +149,7 @@ body{
     font-weight: 700;
 }
 
-.winHome{
+.winHome {
     display: none;
 
     position: absolute;
@@ -160,7 +162,7 @@ body{
     font-weight: 700;
 }
 
-.winDona{
+.winDona {
     display: none;
 
     position: absolute;
@@ -174,50 +176,61 @@ body{
     padding-top: 6%;
 }
 
-.showMenu{
-    display: block;
+.showMenu {
+    position: absolute;
+    top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
 }
-
-.showGame{
+.showGame {
     display: none;
 }
 
-.end{
-    display:none;
+.end {
+    display: none;
 }
 
-.texto-original{
+.texto-original {
     font-size: 30px;
 }
 
-.texto-original2{
+.texto-original2 {
     font-size: 30px;
 }
 
 
-@keyframes animarDino{
-    from{
+@keyframes animarDino {
+    from {
         background-position-x: -129px;
     }
-    to{
+
+    to {
         background-position-x: -175px;
     }
 }
 
-@keyframes animarDona{
-    from{
+@keyframes animarDona {
+    from {
         background-position-x: -124px;
     }
-    to{
+
+    to {
         background-position-x: -231px;
     }
 }
 
-@keyframes animarHome{
-    from{
+@keyframes animarHome {
+    from {
         background-position-x: -124px;
     }
-    to{
+
+    to {
         background-position-x: -231px;
     }
+}
+
+.logo {
+    height: 30%;
+    width: 30%;
 }
