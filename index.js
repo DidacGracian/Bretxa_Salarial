@@ -60,7 +60,7 @@ document.addEventListener("touchend", function(event) {
 
 // Función para refrescar la página
 function refrescarPagina() {
-    // location.reload();
+    location.reload();
 }
 
 // Función para detener la actualización
