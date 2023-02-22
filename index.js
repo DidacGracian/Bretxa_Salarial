@@ -83,7 +83,6 @@ var intervalId = setInterval(function () {
 }, intervalo);
 
 function selectSex(genere) {
-    checkDevice();
     this.refresh = false;
     this.genere = genere;
     startGame()
