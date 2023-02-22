@@ -294,3 +294,7 @@ body {
         width: 30%;
     }
 }
+
+.error{
+    display: none;
+}

@@ -44,17 +44,23 @@ var time = new Date();
 var fechaInicio = new Date();
 var deltaTime = 0;
 
-// Detectar si el dispositivo es un ordenador
-var isDesktop = navigator.userAgent.indexOf("Windows") !== -1 || navigator.userAgent.indexOf("Mac") !== -1;
+function checkDevice() {
+    // Detectar si el dispositivo es un ordenador
+    var isDesktop = navigator.userAgent.indexOf("Windows") !== -1 || navigator.userAgent.indexOf("Mac") !== -1;
 
-// Si el dispositivo no es un ordenador, mostrar un mensaje de advertencia
-if (!isDesktop) {
-  // Crear un elemento HTML para mostrar el mensaje
-  var message = document.createElement("div");
-  message.innerHTML = "Este juego solo es válido en ordenadores.";
+    // Si el dispositivo no es un ordenador, mostrar un mensaje de advertencia
+    if (!isDesktop) {
+        element = document.querySelector('.contenedor');
+        element.style.display = "none";
+        const error = document.getElementById('texto-error');
+        error.textContent = "Només es pot jugar en ordinador"
+        // // Crear un elemento HTML para mostrar el mensaje
+        // var message = document.createElement("div");
+        // message.innerHTML = "Només es pot jugar en ordinador";
 
-  // Agregar el elemento al cuerpo del documento
-  document.body.appendChild(message);
+        // Agregar el elemento al cuerpo del documento
+        // document.body.appendChild(message);
+    }
 }
 
 if (document.readyState === "complete" || document.readyState === "interactive") {
@@ -67,9 +73,9 @@ if (localStorage.getItem('restartGame')) {
     startGame();
 }
 
-document.addEventListener("touchend", function(event) {
+document.addEventListener("touchend", function (event) {
     Saltar();
-  });
+});
 
 // Función para refrescar la página
 function refrescarPagina() {
@@ -92,6 +98,7 @@ var intervalId = setInterval(function () {
 }, intervalo);
 
 function selectSex(genere) {
+    checkDevice();
     this.refresh = false;
     this.genere = genere;
     startGame()
@@ -178,16 +185,16 @@ function Update() {
 
 function TimeWin() {
     var fechaActual = new Date();
-    if(genere){
+    if (genere) {
         if ((fechaActual - fechaInicio) >= gameTimeDona) { // Compara las fechas (en milisegundos)
             win();
         }
-    }else{
+    } else {
         if ((fechaActual - fechaInicio) >= gameTimeHome) { // Compara las fechas (en milisegundos)
             win();
         }
     }
-    
+
 }
 function HandleKeyDown(ev) {
     Saltar();
@@ -319,7 +326,7 @@ function GanarPuntos() {
         gameVel = 1.3;
     } else if (score == 7) {
         gameVel = 1.5;
-    }  else if (score == 11) {
+    } else if (score == 11) {
         gameVel = 1.7;
     } else if (score == 17) {
         gameVel = 2.0;
@@ -344,7 +351,7 @@ function win() {
     dino.classList.remove("container");
     var winDona = document.querySelector(".winDona");
     if (genere) {
-        eliminarObstaculos();        
+        eliminarObstaculos();
         winDona.style.display = "block";
         textoOriginal.textContent = "Sou mig d’una dona: 1.604,83€/bruts.";
         textoOriginal2.textContent = " Un 18,73% menys que un home.";
