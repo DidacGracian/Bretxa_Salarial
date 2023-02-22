@@ -44,24 +44,9 @@ var time = new Date();
 var fechaInicio = new Date();
 var deltaTime = 0;
 
-function checkDevice() {
-    // Detectar si el dispositivo es un ordenador
-    var isDesktop = navigator.userAgent.indexOf("Windows") !== -1 || navigator.userAgent.indexOf("Mac") !== -1;
-
-    // Si el dispositivo no es un ordenador, mostrar un mensaje de advertencia
-    if (!isDesktop) {
-        element = document.querySelector('.contenedor');
-        element.style.display = "none";
-        const error = document.getElementById('texto-error');
-        error.textContent = "Només es pot jugar en ordinador"
-        // // Crear un elemento HTML para mostrar el mensaje
-        // var message = document.createElement("div");
-        // message.innerHTML = "Només es pot jugar en ordinador";
-
-        // Agregar el elemento al cuerpo del documento
-        // document.body.appendChild(message);
-    }
-}
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+    alert("Lo siento, este juego solo funciona en ordenadores.");
+  }
 
 if (document.readyState === "complete" || document.readyState === "interactive") {
     setTimeout(Init, 1);
